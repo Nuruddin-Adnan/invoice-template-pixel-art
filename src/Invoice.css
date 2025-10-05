@@ -244,15 +244,30 @@
 
 .invoice-meta-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 8px;
   align-items: start;
+  position: relative;
 }
+
 
 .invoice-meta-item {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  position: relative;
+}
+
+.invoice-meta-item.invoice-vr-line::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  background-color: #555;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+
 }
 
 .invoice-meta-label {
@@ -279,7 +294,7 @@
 /* Table */
 .invoice-table {
   margin-bottom: 10px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   overflow: hidden;
 }
 
@@ -287,9 +302,8 @@
   display: grid;
   grid-template-columns: 2fr 0.8fr 1fr 0.6fr 1.2fr;
   background: #e2e6e9;
-  border-bottom: 2px solid #c9c9c9;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -297,16 +311,39 @@
 }
 
 .invoice-table-header > div {
-  padding: 12px 12px;
+  padding: 10px 12px;
   display: flex;
   align-items: center;
-  border-right: 1px solid #e0e0e0;
+  position: relative;
 }
 
 .invoice-table-header > div:last-child {
-  border-right: none;
   justify-content: flex-end;
 }
+
+.invoice-table-header > div::before {
+  content: "";
+  width: 1px;
+  height: 15px;
+  position: absolute;
+  background-color: #777;  
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.invoice-table-header > div:last-child::before {
+  display: none;
+}
+
+.invoice-table-header .invoice-col-price::before {
+  right: -15px
+}
+
+.invoice-table-header .invoice-col-btw::before {
+  right: -10px
+}
+
 
 .invoice-col-units {
   justify-content: center;
@@ -329,7 +366,7 @@
 }
 
 .invoice-table-body .invoice-col-price::before {
-    content: '';
+  content: '';
   position: absolute;
   width: 40px;
   height: 1px;
@@ -432,6 +469,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  text-align: right;
   gap: 0px;  
 }
 
@@ -446,6 +484,8 @@
 .invoice-total-label {
   color: #555;
   font-weight: 500;
+  text-align: right;
+  width: 150px;
 }
 
 .invoice-total-value {
@@ -475,6 +515,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  width: 150PX;
 }
 
 .invoice-final-value {
@@ -496,7 +537,7 @@
 .invoice-footer {
   position: absolute;
   bottom: 50px;
-  left: 50px;
+  left: 60px;
   right: 50px; 
   padding-top: 25px;
 }
@@ -508,6 +549,17 @@
   font-weight: 600;
   color: #2c3e50;
   margin: 0 0 8px 0;
+  position: relative;
+}
+
+.invoice-footer-title::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 1px;
+  background-color: #777;
+  left: 0;
+  bottom: -0.5px;
 }
 
 .invoice-footer-text {

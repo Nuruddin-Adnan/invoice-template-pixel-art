@@ -92,7 +92,7 @@ function App() {
                   </div>
                   <div className="invoice-meta-item">
                     <span className="invoice-meta-label">rekeninghouder</span>
-                    <span className="invoice-meta-value">PIXELS ART COMPANY</span>
+                    <span className="invoice-meta-value">PIXELS ART COMPANY </span>
                   </div>
                 </div>
 
@@ -109,7 +109,7 @@ function App() {
                 <div className='hr-line ml-auto'></div>
 
                 <div className="invoice-meta-section">
-                  <div className="invoice-meta-item">
+                  <div className="invoice-meta-item invoice-vr-line">
                     <span className="invoice-meta-label">factuurnummer</span>
                     <span className="invoice-meta-value">INV2025-0185</span>
                   </div>
@@ -120,7 +120,7 @@ function App() {
                 </div>
 
                 <div className="invoice-meta-section">
-                  <div className="invoice-meta-item">
+                  <div className="invoice-meta-item  invoice-vr-line">
                     <span className="invoice-meta-label">klant referentie</span>
                     <span className="invoice-meta-value">project abbot-x110</span>
                   </div>
@@ -220,19 +220,19 @@ function App() {
             {/* Totals */}
             <div className="invoice-totals">
               <div className="invoice-total-row">
-                <span className="invoice-total-label">TOTAAL EX. BTW</span>
+                <span className="invoice-total-label">TOTAAL EX. BTW : </span>
                 <span className="invoice-total-value">$ 15270.00</span>
               </div>
               <div className="invoice-total-row">
-                <span className="invoice-total-label">BTW: 21%</span>
+                <span className="invoice-total-label">BTW: 21% :</span>
                 <span className="invoice-total-value">$ 2275.00</span>
               </div>
               <div className="invoice-total-row invoice-discount-row">
-                <span className="invoice-total-label">Korting (20%)</span>
+                <span className="invoice-total-label">Korting (20%) :</span>
                 <span className="invoice-total-value">$ 750.00</span>
               </div>
               <div className="invoice-final-total">
-                <span className="invoice-final-label">TOTAAL</span>
+                <span className="invoice-final-label">TOTAAL :</span>
                 <span className="invoice-final-value">$75200.00</span>
               </div>
             </div>
